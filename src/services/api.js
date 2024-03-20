@@ -10,34 +10,52 @@ const api = axios.create({
   },
 });
 
-export const fetchData = async () => {
+export const fetchUsers = async (page = 0, limit = 10) => {
   try {
     const response = await api.get('user', {
       params: {
-        page: 1,
-        limit: 10,
+        page,
+        limit,
       },
     });
 
     console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('Error fetching users:', error);
+    throw error;
   }
 };
 
-export const fetchPostById = (postId) => {
-  return axios.get(`${apiUrl}/post/${postId}`, {
-    headers: {
-      'app-id': apiKey,
-    },
-  });
+export const fetchPosts = async () => {
+  try {
+    const response = await api.get('post');
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
+  }
 };
 
-export const fetchCommentsByPostId = (postId) => {
-  return axios.get(`${apiUrl}/post/${postId}/comment`, {
-    headers: {
-      'app-id': apiKey,
-    },
-  });
+export const fetchPostById = async (postId) => {
+  try {
+    const response = await api.get(`post/${postId}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching post by ID:', error);
+    throw error;
+  }
+};
+
+export const fetchCommentsByPostId = async (postId) => {
+  try {
+    const response = await api.get(`post/${postId}/comment`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching comments by post ID:', error);
+    throw error;
+  }
 };

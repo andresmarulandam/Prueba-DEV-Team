@@ -5,7 +5,11 @@ import './styles.css';
 
 function LoginButton() {
   const { loginWithRedirect } = useAuth0();
-  return <button onClick={() => loginWithRedirect()}>Login</button>;
+  return (
+    <button className="login-button" onClick={() => loginWithRedirect()}>
+      Login
+    </button>
+  );
 }
 
 export default LoginButton;

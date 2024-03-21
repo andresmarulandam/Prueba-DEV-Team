@@ -5,6 +5,7 @@
 1. Clona este repositorio en tu máquina local.
 2. Navega a la carpeta del proyecto.
 3. Ejecuta `npm install` para instalar las dependencias.
+4. IMPORTANTE: Crea un archivo en la raíz llamado .env y copia las variables del .env.example
 
 ## Uso
 

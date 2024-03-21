@@ -34,14 +34,15 @@ function Comments() {
         ) : (
           comments.map((comment) => (
             <div className="comment-card" key={comment.id}>
-              <div className="card-body">
-                <p className="card-text">{comment.message}</p>
-                <div className="card-footer">
-                  <p className="card-info">
-                    Usuario: {comment.owner.firstName}
-                  </p>
-                  <p className="card-info">Fecha: {comment.publishDate}</p>
-                </div>
+              <div className="comment-content">
+                <p className="comment-message">{comment.message}</p>
+                <p className="comment-info">
+                  <strong>Usuario: </strong>
+                  {comment.owner.firstName}
+                  <span>
+                    <strong>Fecha:</strong> {comment.publishDate}
+                  </span>
+                </p>
               </div>
             </div>
           ))

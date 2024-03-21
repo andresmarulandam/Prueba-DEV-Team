@@ -10,7 +10,7 @@ const api = axios.create({
   },
 });
 
-export const fetchData = async () => {
+export const fetchUsers = async () => {
   try {
     const response = await api.get('user', {
       params: {

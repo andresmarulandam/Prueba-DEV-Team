@@ -10,12 +10,12 @@ const api = axios.create({
   },
 });
 
-export const fetchUsers = async () => {
+export const fetchUsers = async (page) => {
   try {
     const response = await api.get('user', {
       params: {
-        page: 1,
-        limit: 10,
+        page: page,
+        limit: 12,
       },
     });
 

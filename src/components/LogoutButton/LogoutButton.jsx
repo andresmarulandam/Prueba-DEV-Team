@@ -5,7 +5,11 @@ import './styles.css';
 
 function LogoutButton() {
   const { logout } = useAuth0();
-  return <button onClick={() => logout()}>Logout</button>;
+  return (
+    <button className="logout-button" onClick={() => logout()}>
+      Logout
+    </button>
+  );
 }
 
 export default LogoutButton;

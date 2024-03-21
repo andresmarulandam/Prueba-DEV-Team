@@ -9,7 +9,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/comments" element={<Comments />} />
+      <Route path="/comments/:postId" element={<Comments />} />
     </Routes>
   );
 }

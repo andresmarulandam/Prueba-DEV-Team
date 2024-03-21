@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchPosts, fetchTags } from '../../services/api';
+import { fetchPosts } from '../../services/api';
 
 import './styles.css';
 import LoginButton from '../LoginButton/LoginButton';
@@ -31,8 +31,8 @@ function PostList() {
     getPostsandTags();
   }, []);
 
-  const comments = () => {
-    navigate('/comments');
+  const navigateToComments = (postId) => {
+    navigate(`/comments/${postId}`);
   };
 
   const handleTagSelection = (tag) => {
@@ -85,7 +85,10 @@ function PostList() {
                 <strong>Usuario:</strong> {post.owner.firstName}{' '}
                 {post.owner.lastName}
               </p>
-              <button className="comments-button" onClick={comments}>
+              <button
+                className="comments-button"
+                onClick={() => navigateToComments(post.id)}
+              >
                 Comments
               </button>
             </div>

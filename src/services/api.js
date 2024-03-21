@@ -55,10 +55,12 @@ export const fetchTags = async () => {
   }
 };
 
-export const fetchCommentsByPostId = (postId) => {
-  return axios.get(`${apiUrl}/post/${postId}/comment`, {
-    headers: {
-      'app-id': apiKey,
-    },
-  });
+export const fetchCommentsByPostId = async (postId) => {
+  try {
+    const response = await api.get(`post/${postId}/comment`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
+  }
 };

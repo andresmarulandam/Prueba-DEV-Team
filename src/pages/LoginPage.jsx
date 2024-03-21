@@ -5,6 +5,8 @@ import LogoutButton from '../components/LogoutButton/LogoutButton';
 import UserList from '../components/UserList/UserList';
 import PostList from '../components/Post/PostList';
 
+import './styles.css';
+
 function LoginPage() {
   const { isAuthenticated, isLoading } = useAuth0();
   if (isLoading) return <h1>Is Loading...</h1>;
@@ -17,7 +19,6 @@ function LoginPage() {
         </div>
       ) : (
         <div>
-          <LoginButton />
           <PostList />
         </div>
       )}

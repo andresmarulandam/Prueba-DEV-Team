@@ -1,8 +1,20 @@
+.button-container{
+  display: flex;
+  justify-content: end;
+}
+
+
 .post-list-container {
-  max-width: 400px;
+  max-width: 600px;
+ 
   margin: 0 auto;
   padding: 20px;
 }
+
+.post-list-container h1{
+  font-size: 50px;
+}
+
 
 .post-card {
   background-color: #f9f9f9;
@@ -10,21 +22,37 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-bottom: 20px;
+  
 }
 
 .post-image {
   width: 100%;
-  height: auto;
+  max-width: 300px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
 .post-tags {
   margin-bottom: 5px;
-  color: black
+  color:black
 }
 
 .post-user {
   font-size: 14px;
   color: black
+}
+
+.tag-button {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.tag-button.selected {
+  background-color: blue;
 }

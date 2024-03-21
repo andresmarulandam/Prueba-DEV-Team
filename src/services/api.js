@@ -19,7 +19,6 @@ export const fetchUsers = async (page) => {
       },
     });
 
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -29,7 +28,7 @@ export const fetchUsers = async (page) => {
 export const fetchPosts = async () => {
   try {
     const response = await api.get('post');
-    console.log(response.data);
+
     return response.data;
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -43,6 +42,17 @@ export const fetchPostById = (postId) => {
       'app-id': apiKey,
     },
   });
+};
+
+export const fetchTags = async () => {
+  try {
+    const response = await api.get('tag');
+
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching posts:', error);
+    throw error;
+  }
 };
 
 export const fetchCommentsByPostId = (postId) => {

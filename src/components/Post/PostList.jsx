@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchPosts, fetchTags } from '../../services/api';
 
 import './styles.css';
 import LoginButton from '../LoginButton/LoginButton';
 
 function PostList() {
+  const navigate = useNavigate();
+
   const [posts, setPosts] = useState([]);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -27,6 +30,10 @@ function PostList() {
 
     getPostsandTags();
   }, []);
+
+  const comments = () => {
+    navigate('/comments');
+  };
 
   const handleTagSelection = (tag) => {
     setSelectedTags((prevSelectedTags) =>
@@ -78,6 +85,9 @@ function PostList() {
                 <strong>Usuario:</strong> {post.owner.firstName}{' '}
                 {post.owner.lastName}
               </p>
+              <button className="comments-button" onClick={comments}>
+                Comments
+              </button>
             </div>
           ))}
         </div>

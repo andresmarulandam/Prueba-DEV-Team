@@ -1,11 +1,16 @@
+import { Routes, Route } from 'react-router-dom';
+
+import Comments from './pages/Comments/Comments';
+import LoginPage from './pages/LoginPage/LoginPage';
+
 import './App.css';
-import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/comments" element={<Comments />} />
+    </Routes>
   );
 }
 
